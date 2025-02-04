@@ -1,0 +1,26 @@
+[project]
+name = "card_deck"
+version = "0.1.0"
+description = "Building the functionality of a deck of playing cards."
+readme = "README.md"
+authors = [
+    { name = "tsa", email = "thestygianArchitect@gmail.com" }
+]
+maintainers = [
+    { name = "tsa", email = "thestygianArchitect@gmail.com" }
+]
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-xdist>=3.6.1",
+    "ruff>=0.9.4",
+]
