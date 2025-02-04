@@ -1,4 +1,5 @@
-"""
+"""See Description below.
+
 Module Name: __init__.py
 
 Description:
@@ -16,6 +17,12 @@ Usage:
 Import this module to use the card system for card manipulation and functionality.
 """
 
-from .card import Card as Card
-from .card import Rank as Rank
-from .card import Suite as Suite
+from .card import Card
+from .card import Rank
+from .card import Suite
+
+__all__ = [
+    "Card",
+    "Rank",
+    "Suite"
+]

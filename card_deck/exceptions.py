@@ -1,4 +1,5 @@
-"""
+"""See Description below.
+
 Module Name: exceptions.py
 
 Description:
@@ -20,51 +21,30 @@ Classes:
 
 # Base card_deck_exceptions
 class CardDeckException(Exception):
-    """
-    Base exception class for all card_deck deck-related exceptions.
-    """
-    pass
+    """Base exception class for all card_deck deck-related exceptions."""
 
 
 class CardDeckValueError(ValueError):
-    """
-    Exception raised for invalid card_deck deck values.
-    """
-    pass
+    """Exception raised for invalid card_deck deck values."""
 
 
 class CardDeckTypeError(TypeError):
-    """
-    Exception raised for invalid card_deck deck types.
-    """
-    pass
+    """Exception raised for invalid card_deck deck types."""
 
 
 # Card card_deck_exceptions
 class InvalidCard(CardDeckException):
-    """
-    Exception raised for invalid card_deck definitions.
-    """
-    pass
+    """Exception raised for invalid card_deck definitions."""
 
 
 class InvalidCardRank(CardDeckValueError):
-    """
-    Exception raised for invalid card_deck ranks.
-    """
-    pass
+    """Exception raised for invalid card_deck ranks."""
 
 
 class InvalidCardSuite(CardDeckTypeError):
-    """
-    Exception raised for invalid card_deck suites.
-    """
-    pass
+    """Exception raised for invalid card_deck suites."""
 
 
 # Deck card_deck_exceptions
 class InvalidDeck(CardDeckException):
-    """
-    Exception raised for invalid deck definitions.
-    """
-    pass
+    """Exception raised for invalid deck definitions."""

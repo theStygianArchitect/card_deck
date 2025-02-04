@@ -1,10 +1,11 @@
-"""
+"""See Description below.
+
 Module Name: test_card.py
 
 Description:
 This module contains test cases for validating the functionality of the Card class and its related components such as
 Rank and Suite enums and the custom exceptions (InvalidCardRank, InvalidCardSuite). It uses the pytest framework for
-defining and executing parameterized tests, ensuring robust verification of behaviors like initialization, setting, 
+defining and executing parameterized tests, ensuring robust verification of behaviors like initialization, setting,
 and getting of card attributes, as well as exception handling for invalid inputs.
 
 Key Features:
@@ -30,8 +31,8 @@ from card_deck.exceptions import InvalidCardRank
 from card_deck.exceptions import InvalidCardSuite
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_card_initialization(suite: Suite, rank: Rank):
     """
     Test the initialization of a Card object with valid suite and rank values.
@@ -51,9 +52,9 @@ def test_card_initialization(suite: Suite, rank: Rank):
     assert repr(card) == f"{rank} of {suite}"
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
-def test_invalid_card_initialization_suite(suite: Suite, rank: Rank):
+# @pytest.mark.parametrize("suite", list(Suite))
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
+def test_invalid_card_initialization_suite(rank: Rank):
     """
     Test the initialization of a Card object with an invalid suite.
 
@@ -68,9 +69,8 @@ def test_invalid_card_initialization_suite(suite: Suite, rank: Rank):
         Card("InvalidSuit", rank)
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
-def test_invalid_card_initialization_rank(suite: Suite, rank: Rank):
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_invalid_card_initialization_rank(suite: Suite):
     """
     Test the initialization of a Card object with an invalid rank.
 
@@ -85,8 +85,8 @@ def test_invalid_card_initialization_rank(suite: Suite, rank: Rank):
         Card(suite, "InvalidRank")
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_get_suite(suite: Suite, rank: Rank):
     """
     Test the get_suite method of the Card class.
@@ -102,8 +102,8 @@ def test_get_suite(suite: Suite, rank: Rank):
     assert str(card.get_suite()) == suite.name
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_get_rank(suite: Suite, rank: Rank):
     """
     Test the get_rank method of the Card class.
@@ -119,8 +119,8 @@ def test_get_rank(suite: Suite, rank: Rank):
     assert str(card.get_rank()) == rank.name
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_set_suite_valid(suite: Suite, rank: Rank):
     """
     Test setting a valid suite for a Card object using the set_suite method.
@@ -133,16 +133,16 @@ def test_set_suite_valid(suite: Suite, rank: Rank):
         - The suite of the card is updated correctly to the new suite.
     """
     card = Card(suite, rank)
-    temp_suite = Suite.Spades
-    if suite.name == "Spades":
-        temp_suite = Suite.Clubs
+    temp_suite = Suite.SPADES
+    if suite.name == "SPADES":
+        temp_suite = Suite.CLUBS
     card.set_suite(temp_suite)
 
     assert card.suite == temp_suite
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_set_rank_valid(suite: Suite, rank: Rank):
     """
     Test setting a valid rank for a Card object using the set_rank method.
@@ -155,16 +155,16 @@ def test_set_rank_valid(suite: Suite, rank: Rank):
         - The rank of the card is updated correctly to the new rank.
     """
     card = Card(suite, rank)
-    temp_rank = Rank.King
-    if rank.name == "King":
-        temp_rank = Rank.Ace
+    temp_rank = Rank.KING
+    if rank.name == "KING":
+        temp_rank = Rank.ACE
     card.set_rank(temp_rank)
 
     assert card.rank == temp_rank
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_set_suite_invalid(suite: Suite, rank: Rank):
     """
     Test setting an invalid suite for a Card object using the set_suite method.
@@ -181,8 +181,8 @@ def test_set_suite_invalid(suite: Suite, rank: Rank):
         card.set_suite("InvalidSuite")
 
 
-@pytest.mark.parametrize("suite", [suite for suite in Suite])
-@pytest.mark.parametrize("rank", [rank for rank in Rank])
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+@pytest.mark.parametrize("rank", list(Rank))  # type: ignore
 def test_set_rank_invalid(suite: Suite, rank: Rank):
     """
     Test setting an invalid rank for a Card object using the set_rank method.

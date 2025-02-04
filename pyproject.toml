@@ -13,14 +13,48 @@ license = "MIT"
 requires-python = ">=3.13"
 dependencies = []
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [dependency-groups]
 dev = [
+    "bandit>=1.8.2",
+    "mypy>=1.14.1",
+    "pip-audit>=2.7.3",
+    "pycodestyle>=2.12.1",
+    "pydocstyle>=6.3.0",
+    "pylint>=3.3.4",
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
     "pytest-xdist>=3.6.1",
     "ruff>=0.9.4",
+    "safety>=3.2.14",
 ]
+
+[tool.pytest.ini_options]
+#addopts = "--numprocesses auto -rA --reruns 10 --reruns-delay 60"
+#addopts = "--numprocesses auto -rA"
+addopts = "-rA"
+log_cli = true
+log_cli_level = 10
+
+[tool.mypy]
+strict = true
+strict_optional = true
+#ignore_missing_imports = true
+follow_imports = "skip"
+show_error_codes = true
+
+[tool.pydocstyle]
+convention = "google"
+add_ignore = "D105"
+
+[tool.pylint]
+max-line-length = 120
+
+[tool.pycodestyle]
+max-line-length = 120
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py']
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
