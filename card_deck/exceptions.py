@@ -31,6 +31,9 @@ class CardDeckValueError(ValueError):
 class CardDeckTypeError(TypeError):
     """Exception raised for invalid card_deck deck types."""
 
+class CardDeckAttributeError(AttributeError):
+    """Exception raised for invalid card_deck deck attributes."""
+
 
 # Card card_deck_exceptions
 class InvalidCard(CardDeckException):
@@ -43,6 +46,10 @@ class InvalidCardRank(CardDeckValueError):
 
 class InvalidCardSuite(CardDeckTypeError):
     """Exception raised for invalid card_deck suites."""
+
+
+class InvalidCardAttribute(CardDeckAttributeError):
+    """Exception raised for invalid card_deck attributes."""
 
 
 # Deck card_deck_exceptions

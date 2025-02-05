@@ -16,11 +16,13 @@ Classes:
 Usage:
 Users can create and manipulate card objects using these classes for card-related operations.
 """
-
+import logging
 from enum import Enum
 
 from card_deck.exceptions import InvalidCardRank
 from card_deck.exceptions import InvalidCardSuite
+
+logger = logging.getLogger(__name__)
 
 
 class Suite(Enum):
@@ -38,6 +40,7 @@ class Suite(Enum):
     SPADES = 4
 
     def __str__(self) -> str:
+        logger.debug("name: %s", self.name)
         return self.name
 
 
@@ -66,6 +69,7 @@ class Rank(Enum):
     KING = 13
 
     def __str__(self) -> str:
+        logger.debug("name: %s", self.name)
         return self.name
 
 
@@ -73,8 +77,8 @@ class Card:
     """A class to represent a playing card_deck, defined by its suite and rank.
 
     Attributes:
-        suite (Suite): The suite of the card_deck (Clubs, Diamonds, Hearts, Spades).
-        rank (Rank): The rank of the card_deck (Ace, 2-10, Jack, Queen, King).
+        _suite (Suite): The suite of the card_deck (Clubs, Diamonds, Hearts, Spades).
+        _rank (Rank): The rank of the card_deck (Ace, 2-10, Jack, Queen, King).
     """
 
     def __init__(self, suite: Suite, rank: Rank):
@@ -84,13 +88,18 @@ class Card:
             suite (Suite): An instance of the suite enum representing the card_deck's suite.
             rank (Rank): An instance of the Rank enum representing the card_deck's rank.
         """
+        logger.debug("suite: %s", suite)
+        logger.debug("rank: %s", rank)
+
         if suite in Suite:
-            self.suite = suite
+            self._suite = suite
+            logger.debug("_suite: %s", self._suite)
         else:
             raise InvalidCardSuite("Invalid card_deck suite")
 
         if rank in Rank:
-            self.rank = rank
+            self._rank = rank
+            logger.debug("_rank: %s", self._rank)
         else:
             raise InvalidCardRank("Invalid card_deck rank")
 
@@ -100,54 +109,100 @@ class Card:
         Returns:
             str: A formatted string in the format '<Rank> of <suite>'.
         """
-        return f"{self.rank} of {self.suite}"
+        logger.debug("%s of %s", self._rank, self._suite)
+        return f"{self._rank} of {self._suite}"
 
-    def get_suite(self) -> Suite:
+    @property
+    def suite(self) -> Suite:
         """Get the suite of the card_deck.
 
         Returns:
             Suite: The suite of the card_deck.
         """
-        return self.suite
+        logger.debug("suite: %s", self._suite)
+        logger.debug("type(suite): %s", type(self._suite))
+        return self._suite
 
-    def get_rank(self) -> Rank:
+    @suite.setter
+    def suite(self, suite: Suite) -> None:
+        """Set the suite of the card_deck.
+
+        Args:
+            suite (Suite): An instance of the suite enum representing the new suite.
+
+        Returns:
+            None
+
+        Raises:
+            InvalidCardSuite: If the provided suite is not a valid suite enum.
+        """
+        logger.debug("suite: %s", suite)
+        logger.debug("type(suite): %s", type(suite))
+        logger.debug("Suite attrs: %s", vars(Suite))
+
+        if suite in Suite:
+            self._suite = suite
+            logger.debug("_suite: %s", self._suite)
+        else:
+            raise InvalidCardSuite("Invalid card_deck suite")
+
+    @suite.deleter
+    def suite(self) -> None:
+        """Delete the suite of the card_deck.
+
+        Deletes the `_suite` attribute of the card, effectively removing its suite
+        and logs the deletion process.
+
+        Returns:
+            None
+        """
+        logger.debug("_suite: %s", self._suite)
+        del self._suite
+        logger.debug("deleted _suite: %s", self._suite)
+
+    @property
+    def rank(self) -> Rank:
         """Get the rank of the card_deck.
 
         Returns:
             Rank: The rank of the card_deck.
         """
-        return self.rank
+        logger.debug("_rank: %s", self._rank)
+        return self._rank
 
-    def set_suite(self, suite: Suite) -> Suite:
-        """Set the suite of the card_deck.
-
-        Args:
-            suite (Suite): An instance of the suite enum representing the new suite.0
-
-        Returns:
-            Suite: The updated suite of the card_deck.
-
-        Raises:
-            InvalidCardSuite: If the provided suite is not a valid suite enum.
-        """
-        if suite in Suite:
-            self.suite = suite
-            return self.suite
-        raise InvalidCardSuite("Invalid card_deck suite")
-
-    def set_rank(self, rank: Rank) -> Rank:
+    @rank.setter
+    def rank(self, rank: Rank) -> None:
         """Set the rank of the card_deck.
 
         Args:
             rank (Rank): An instance of the Rank enum representing the new rank.
 
         Returns:
-            Rank: The updated rank of the card_deck.
+            None
 
         Raises:
             InvalidCardRank: If the provided rank is not a valid Rank enum.
         """
+        logger.debug("rank: %s", rank)
+        logger.debug("type(rank): %s", type(rank))
+        logger.debug("Rank attrs: %s", vars(Rank))
+
         if rank in Rank:
-            self.rank = rank
-            return self.rank
-        raise InvalidCardRank("Invalid card_deck rank")
+            self._rank = rank
+            logger.debug("_rank: %s", self._rank)
+        else:
+            raise InvalidCardRank("Invalid card_deck rank")
+
+    @rank.deleter
+    def rank(self) -> None:
+        """Delete the suite of the card_deck.
+
+        Deletes the `_suite` attribute of the card, effectively removing its suite
+        and logs the deletion process.
+
+        Returns:
+            None
+        """
+        logger.debug("_rank: %s", self._rank)
+        del self._rank
+        logger.debug("deleted _rank: %s", self._rank)

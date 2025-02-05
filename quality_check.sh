@@ -143,12 +143,12 @@ run_coverage() {
   fi
 
   echo "Generating coverage report"
-  uv run coverage report
+  uv run coverage report -m
   exit_code=$?
   echo "Coverage report generated."
 }
 
-run_safety_check() {
+run_dependency_check() {
   ## security code scanning
   echo "Starting pip audit"
   uv run pip-audit
@@ -164,7 +164,7 @@ run_security_check() {
   # run all security checks
   echo "Running all security checks"
   run_bandit_check
-  run_safety_check
+  run_dependency_check
 }
 
 run_linting_check() {
@@ -180,7 +180,7 @@ run_linting_check() {
 quality_check() {
   # run all checks
   echo "Running all quality checks"
-  run_safety_check
+  run_dependency_check
   run_bandit_check
   run_ruff_check
   run_pylint_check
@@ -219,12 +219,12 @@ show_usage() {
   echo "    documentation  Automatically build documentation using Sphinx."
   echo "    installation   Validate the installation of card_deck."
   echo "    mypy           Pep484 type hinting with mypy."
+  echo "    pip-audit      Dependency vulnerability checking with pip-audit"
   echo "    pycodestyle    Pep008 checking with pycodestyle"
   echo "    pydocstyle     Pep257 checking with pydocstyle"
   echo "    pylint         Code linting with pylint"
   echo "    pytest         Run project's tests"
   echo "    ruff           Code linting with ruff"
-  echo "    safety         Dependency vulnerability checking with safety"
   echo
 }
 
@@ -254,12 +254,12 @@ while getopts 'aclhistdq:' flag; do
       documentation) run_automated_docs ;;
       installation) verify_card_deck_installation ;;
       mypy) run_mypy_check ;;
+      pip-audit) run_dependency_check ;;
       pycodestyle) run_pycodestyle_check ;;
       pydocstyle) run_pydocstyle_check ;;
       pylint) run_pylint_check ;;
       pytest) run_pytest ;;
       ruff) run_ruff_check ;;
-      safety) run_safety_check ;;
       *)
         echo "${OPTARG} is a bad option!!"
         echo "${options}"
