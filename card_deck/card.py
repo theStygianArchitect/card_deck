@@ -26,13 +26,13 @@ logger = logging.getLogger(__name__)
 
 
 class Suite(Enum):
-    """An enumeration to represent the four suits in a standard deck of cards.
+    """Enumeration of the four suits in a standard deck of cards.
 
     Attributes:
-        CLUBS (int): Represents the 'CLUBS' suite.
-        DIAMONDS (int): Represents the 'DIAMONDS' suite.
-        HEARTS (int): Represents the 'HEARTS' suite.
-        SPADES (int): Represents the 'SPADES' suite.
+        CLUBS: Represents the Clubs suit.
+        DIAMONDS: Represents the Diamonds suit.
+        HEARTS: Represents the Hearts suit.
+        SPADES: Represents the Spades suit.
     """
     CLUBS = 1
     DIAMONDS = 2
@@ -40,19 +40,24 @@ class Suite(Enum):
     SPADES = 4
 
     def __str__(self) -> str:
+        """Converts the Suite to its string representation.
+
+        Returns:
+            str: A string representing the name of the suite.
+        """
         logger.debug("name: %s", self.name)
         return self.name
 
 
 class Rank(Enum):
-    """An enumeration to represent the ranks in a standard deck of cards.
+    """Enumeration of card ranks in a standard deck of cards.
 
     Attributes:
-        ACE (int): Represents the 'Ace' rank with a value of 1.
-        TWO to TEN (int): Represent numeric card_deck ranks with values from 2 to 10.
-        JACK (int): Represents the 'Jack' rank with a value of 11.
-        QUEEN (int): Represents the 'Queen' rank with a value of 12.
-        KING (int): Represents the 'King' rank with a value of 13.
+        ACE: Represents the Ace rank with a value of 1.
+        TWO to TEN: Represent ranks for numbered cards with values ranging from 2 to 10.
+        JACK: Represents the Jack rank with a value of 11.
+        QUEEN: Represents the Queen rank with a value of 12.
+        KING: Represents the King rank with a value of 13.
     """
     ACE = 1
     TWO = 2
@@ -69,6 +74,11 @@ class Rank(Enum):
     KING = 13
 
     def __str__(self) -> str:
+        """Convert the Rank to its string representation.
+
+        Returns:
+            str: The string representation of the rank's name.
+        """
         logger.debug("name: %s", self.name)
         return self.name
 
@@ -156,6 +166,7 @@ class Card:
         Returns:
             None
         """
+        logger.warning("We out here deleting suites now???")
         logger.debug("_suite: %s", self._suite)
         del self._suite
         logger.debug("deleted _suite: %s", self._suite)
@@ -203,6 +214,7 @@ class Card:
         Returns:
             None
         """
+        logger.warning("We out here deleting ranks now???")
         logger.debug("_rank: %s", self._rank)
         del self._rank
         logger.debug("deleted _rank: %s", self._rank)

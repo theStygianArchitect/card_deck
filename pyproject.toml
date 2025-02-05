@@ -32,7 +32,7 @@ dev = [
 #addopts = "--numprocesses auto -rA"
 addopts = "-rA"
 log_cli = true
-log_cli_level = 10
+log_cli_level = 30
 
 [tool.mypy]
 strict = true
@@ -43,7 +43,6 @@ show_error_codes = true
 
 [tool.pydocstyle]
 convention = "google"
-add_ignore = "D105"
 
 [tool.pylint]
 max-line-length = 120

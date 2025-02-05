@@ -186,7 +186,6 @@ quality_check() {
   run_pylint_check
   run_pydocstyle_check
   run_mypy_check
-  run_pytest
   run_coverage
   run_automated_docs
 }
@@ -251,6 +250,7 @@ while getopts 'aclhistdq:' flag; do
     d) run_automated_docs ;;
     q) case "${OPTARG}" in
       bandit) run_bandit_check ;;
+      coverage) run_coverage ;;
       documentation) run_automated_docs ;;
       installation) verify_card_deck_installation ;;
       mypy) run_mypy_check ;;
