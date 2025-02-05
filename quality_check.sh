@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-#
 # Perform quality checks of the card_deck library.
 
 run_install_check() {
-  ## Install card_deck library
+  # Install card_deck library
   echo "Installing card_deck"
   python3 -m pip install git+https://github.com/theStygianArchitect/card_deck.git@main
   exit_code=$?
@@ -14,7 +13,7 @@ run_install_check() {
 }
 
 run_uninstall_check() {
-  ## Uninstall card_deck library
+  # Uninstall card_deck library
   echo "Uninstalling card_deck"
   python3 -m pip uninstall -y card_deck
   exit_code=$?
@@ -25,7 +24,7 @@ run_uninstall_check() {
 }
 
 run_automated_docs() {
-  ## Rebuilding documentation
+  # Rebuilding documentation
   echo "Rebuilding documentation"
   cd ./doc_src && make github
 }
@@ -121,7 +120,7 @@ run_ruff_check() {
 }
 
 run_pytest() {
-  ## Unit Testing
+  # Unit Testing
   echo "Starting project tests"
   uv run python -m pytest -x "${test_directory}"
   exit_code=$?
@@ -133,7 +132,7 @@ run_pytest() {
 }
 
 run_coverage() {
-  ## Unit Testing
+  # Unit Testing
   echo "Starting project coverage tests"
   uv run coverage run -m pytest "${test_directory}"
   exit_code=$?
@@ -149,7 +148,7 @@ run_coverage() {
 }
 
 run_dependency_check() {
-  ## security code scanning
+  # security code scanning
   echo "Starting pip audit"
   uv run pip-audit
   exit_code=$?
@@ -234,8 +233,8 @@ app_directory_list=(
 )
 test_directory="tests"
 read -r -d '' options << EOM
-Please use [bandit | documentation | installation | mypy | pycodestyle |
-            pydocstyle | pylint | pytest | safety]
+Please use [bandit | coverage | documentation | installation | mypy | pip-audit |
+            pycodestyle | pydocstyle | pylint | pytest | ruff]
 EOM
 
 while getopts 'aclhistdq:' flag; do
@@ -266,6 +265,6 @@ while getopts 'aclhistdq:' flag; do
         exit 1
         ;;
     esac ;;
-    *) quality_check ;;
+    *) show_usage ;;
   esac
 done
