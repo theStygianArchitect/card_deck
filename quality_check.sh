@@ -159,6 +159,34 @@ run_dependency_check() {
   echo "Passed pip audit."
 }
 
+run_update_all_the_things() {
+  # Update All the Things
+  echo "Updating ALL TEH Things!!!!1!"
+
+  echo "Updating project requirements!"
+  echo "There are none right now"
+  echo "whomp whomp"
+  sleep 3
+
+  echo "Updating security packages!"
+  uv remove --group security bandit pip-audit
+  uv add --group security bandit pip-audit
+
+  echo "Updating linting packages!"
+  uv remove --group linting mypy pycodestyle pydocstyle pylint ruff
+  uv add --group linting mypy pycodestyle pydocstyle pylint ruff
+
+  echo "Updating testing packages!"
+  uv remove --group testing pytest pytest-cov pytest-xdist
+  uv add --group testing pytest pytest-cov pytest-xdist
+
+  echo "Updating documentation packages!"
+  uv remove --group docs myst-parser sphinx sphinx-autodoc-typehints sphinx-immaterial
+  uv add --group docs myst-parser sphinx sphinx-autodoc-typehints sphinx-immaterial
+
+  echo "All TEH Things updated!!!!1!"
+}
+
 run_security_check() {
   # run all security checks
   echo "Running all security checks"
@@ -211,6 +239,7 @@ show_usage() {
   echo "  -l  Run linting checks."
   echo "  -s  Run security checks."
   echo "  -t  Run project's tests."
+  echo "  -u  Upgrade package requirements in the pyproject.toml file."
   echo "  -q  Run specific quality check."
   echo "    bandit         Static analysis checking with bandit."
   echo "    coverage       Run Coverage report for project."
@@ -237,7 +266,7 @@ Please use [bandit | coverage | documentation | installation | mypy | pip-audit 
             pycodestyle | pydocstyle | pylint | pytest | ruff]
 EOM
 
-while getopts 'aclhistdq:' flag; do
+while getopts 'aclhistduq:' flag; do
   case "${flag}" in
     a) quality_check ;;
     c) run_coverage ;;
@@ -247,6 +276,7 @@ while getopts 'aclhistdq:' flag; do
     l) run_linting_check ;;
     t) run_pytest ;;
     d) run_automated_docs ;;
+    u) run_update_all_the_things ;;
     q) case "${OPTARG}" in
       bandit) run_bandit_check ;;
       coverage) run_coverage ;;
@@ -259,6 +289,7 @@ while getopts 'aclhistdq:' flag; do
       pylint) run_pylint_check ;;
       pytest) run_pytest ;;
       ruff) run_ruff_check ;;
+      update) run_update_all_the_things ;;
       *)
         echo "${OPTARG} is a bad option!!"
         echo "${options}"
