@@ -39,9 +39,7 @@ The API Documentation / Guide
 
 This part of the documentation details information about the Deck of Cards library's functionality.
 
-.. automodule:: card_deck
-   :members:
-
 .. toctree::
    :maxdepth: 2
 
+dev/api
