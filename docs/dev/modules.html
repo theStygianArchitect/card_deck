@@ -13,7 +13,7 @@
     
     
       
-        <title><no title> - card_deck 0.1.0 documentation</title>
+        <title>card_deck - card_deck 0.1.0 documentation</title>
       
     
     
@@ -89,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              &lt;no title&gt;
+              card_deck
             
           </span>
         </div>
@@ -307,145 +307,161 @@
                   
 
 
-<p id="module-card_deck">See Description below.</p>
-<p>Module Name: __init__.py</p>
-<p>Description:
-This module acts as the initializer for the package. It provides access to the core
-components of the card module, including the <cite>Card</cite>, <cite>Rank</cite>, and <cite>Suit</cite> classes.
-These classes enable the structure and functionality required to work with a deck
-of cards, including ranks, suits, and card representations.</p>
-<dl class="simple">
-<dt>Classes:</dt><dd><ul class="simple">
-<li><p>Card: Represents a playing card with a specific rank and suit.</p></li>
-<li><p>Rank: Enum class to define the ranks (Ace to King) of playing cards.</p></li>
-<li><p>Suit: Enum class to define the suits (Clubs, Diamonds, Hearts, Spades) of playing cards.</p></li>
+<h1 id="card-deck">card_deck<a class="headerlink" href="#card-deck" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="card_deck.html">card_deck package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="card_deck.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="card_deck.html#module-card_deck.card">card_deck.card module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.card.Card">card_deck.card.Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Card._suite">_suite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Card._rank">_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Card.rank">rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Card.suite">suite</a></li>
 </ul>
-</dd>
-</dl>
-<p>Usage:
-Import this module to use the card system for card manipulation and functionality.</p>
-<dl class="py class objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Card">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">card_deck.</span></span><span class="sig-name descname"><span class="pre">Card</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Card" title="card_deck.Card.__init__.suite (Python parameter)"><span class="n"><span class="pre">suite</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Card" title="card_deck.Card.__init__.rank (Python parameter)"><span class="n"><span class="pre">rank</span></span></a></em></span><span class="sig-paren">)</span><a class="headerlink" href="#card_deck.Card" title="Link to this definition">¶</a></dt>
-<dd><p>A class to represent a playing card_deck, defined by its suite and rank.</p>
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Card._suite">
-<span class="sig-name descname"><span class="pre">_suite</span></span><a class="headerlink" href="#card_deck.Card._suite" title="Link to this definition">¶</a></dt>
-<dd><p>The suite of the card_deck (Clubs, Diamonds, Hearts, Spades).</p>
-<dl class="field-list simple">
-<dt class="field-odd" id="card_deck.Card._suite-type">Type<span class="colon">:</span><a class="headerlink" href="#card_deck.Card._suite-type" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#card_deck.Suite" title="card_deck.Suite (Python class) — Enumeration of the four suits in a standard deck of cards.">Suite</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Card._rank">
-<span class="sig-name descname"><span class="pre">_rank</span></span><a class="headerlink" href="#card_deck.Card._rank" title="Link to this definition">¶</a></dt>
-<dd><p>The rank of the card_deck (Ace, 2-10, Jack, Queen, King).</p>
-<dl class="field-list simple">
-<dt class="field-odd" id="card_deck.Card._rank-type">Type<span class="colon">:</span><a class="headerlink" href="#card_deck.Card._rank-type" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#card_deck.Rank" title="card_deck.Rank (Python class) — Enumeration of card ranks in a standard deck of cards.">Rank</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Card.rank">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rank</span></span><span class="p"> <span class="pre">:</span> </span><span class="desctype"><a class="reference internal" href="#card_deck.Rank" title="card_deck.card.Rank (Python class)"><span class="pre">Rank</span></a></span><a class="headerlink" href="#card_deck.Card.rank" title="Link to this definition">¶</a></dt>
-<dd><p>Get the rank of the card_deck.</p>
-<dl class="field-list simple">
-<dt class="field-odd" id="card_deck.Card.rank-returns">Returns<span class="colon">:</span><a class="headerlink" href="#card_deck.Card.rank-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p>The rank of the card_deck.</p>
-</dd>
-<dt class="field-even" id="card_deck.Card.rank-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#card_deck.Card.rank-return-type" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p><a class="reference internal" href="#card_deck.Rank" title="card_deck.Rank (Python class) — Enumeration of card ranks in a standard deck of cards.">Rank</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Card.suite">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">suite</span></span><span class="p"> <span class="pre">:</span> </span><span class="desctype"><a class="reference internal" href="#card_deck.Suite" title="card_deck.card.Suite (Python class)"><span class="pre">Suite</span></a></span><a class="headerlink" href="#card_deck.Card.suite" title="Link to this definition">¶</a></dt>
-<dd><p>Get the suite of the card_deck.</p>
-<dl class="field-list simple">
-<dt class="field-odd" id="card_deck.Card.suite-returns">Returns<span class="colon">:</span><a class="headerlink" href="#card_deck.Card.suite-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p>The suite of the card_deck.</p>
-</dd>
-<dt class="field-even" id="card_deck.Card.suite-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#card_deck.Card.suite-return-type" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p><a class="reference internal" href="#card_deck.Suite" title="card_deck.Suite (Python class) — Enumeration of the four suits in a standard deck of cards.">Suite</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class objdesc">
-<dt class="sig sig-object highlight sig-wrap py" id="card_deck.Rank">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">card_deck.</span></span><span class="sig-name descname"><span class="pre">Rank</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.value (Python parameter)"><span class="n"><span class="pre">value</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.names=&lt;not given&gt; (Python parameter)"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.*values (Python parameter)"><span class="n"><span class="pre">*values</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.module=None (Python parameter)"><span class="n"><span class="pre">module=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.qualname=None (Python parameter)"><span class="n"><span class="pre">qualname=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.type=None (Python parameter)"><span class="n"><span class="pre">type=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.start=1 (Python parameter)"><span class="n"><span class="pre">start=1</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Rank" title="card_deck.Rank.__init__.boundary=None (Python parameter)"><span class="n"><span class="pre">boundary=None</span></span></a></em></span><span class="sig-paren">)</span><a class="headerlink" href="#card_deck.Rank" title="Link to this definition">¶</a></dt>
-<dd><p>Enumeration of card ranks in a standard deck of cards.</p>
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Rank.ACE">
-<span class="sig-name descname"><span class="pre">ACE</span></span><a class="headerlink" href="#card_deck.Rank.ACE" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Ace rank with a value of 1.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py">
-<span class="sig-name descname"><span class="pre">TWO</span> <span class="pre">to</span> <span class="pre">TEN</span></span></dt>
-<dd><p>Represent ranks for numbered cards with values ranging from 2 to 10.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Rank.JACK">
-<span class="sig-name descname"><span class="pre">JACK</span></span><a class="headerlink" href="#card_deck.Rank.JACK" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Jack rank with a value of 11.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Rank.QUEEN">
-<span class="sig-name descname"><span class="pre">QUEEN</span></span><a class="headerlink" href="#card_deck.Rank.QUEEN" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Queen rank with a value of 12.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Rank.KING">
-<span class="sig-name descname"><span class="pre">KING</span></span><a class="headerlink" href="#card_deck.Rank.KING" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the King rank with a value of 13.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class objdesc">
-<dt class="sig sig-object highlight sig-wrap py" id="card_deck.Suite">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">card_deck.</span></span><span class="sig-name descname"><span class="pre">Suite</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.value (Python parameter)"><span class="n"><span class="pre">value</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.names=&lt;not given&gt; (Python parameter)"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.*values (Python parameter)"><span class="n"><span class="pre">*values</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.module=None (Python parameter)"><span class="n"><span class="pre">module=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.qualname=None (Python parameter)"><span class="n"><span class="pre">qualname=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.type=None (Python parameter)"><span class="n"><span class="pre">type=None</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.start=1 (Python parameter)"><span class="n"><span class="pre">start=1</span></span></a></em>, </span><span class="sig-param-decl"><em class="sig-param"><a class="n reference internal" href="#card_deck.Suite" title="card_deck.Suite.__init__.boundary=None (Python parameter)"><span class="n"><span class="pre">boundary=None</span></span></a></em></span><span class="sig-paren">)</span><a class="headerlink" href="#card_deck.Suite" title="Link to this definition">¶</a></dt>
-<dd><p>Enumeration of the four suits in a standard deck of cards.</p>
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Suite.CLUBS">
-<span class="sig-name descname"><span class="pre">CLUBS</span></span><a class="headerlink" href="#card_deck.Suite.CLUBS" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Clubs suit.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Suite.DIAMONDS">
-<span class="sig-name descname"><span class="pre">DIAMONDS</span></span><a class="headerlink" href="#card_deck.Suite.DIAMONDS" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Diamonds suit.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Suite.HEARTS">
-<span class="sig-name descname"><span class="pre">HEARTS</span></span><a class="headerlink" href="#card_deck.Suite.HEARTS" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Hearts suit.</p>
-</dd></dl>
-
-<dl class="py attribute objdesc">
-<dt class="sig sig-object highlight py" id="card_deck.Suite.SPADES">
-<span class="sig-name descname"><span class="pre">SPADES</span></span><a class="headerlink" href="#card_deck.Suite.SPADES" title="Link to this definition">¶</a></dt>
-<dd><p>Represents the Spades suit.</p>
-</dd></dl>
-
-</dd></dl>
-
+</li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.card.Rank">card_deck.card.Rank</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.ACE">ACE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.JACK">JACK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.QUEEN">QUEEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.KING">KING</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id0">ACE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.EIGHT">EIGHT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.FIVE">FIVE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.FOUR">FOUR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id1">JACK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id2">KING</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.NINE">NINE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id3">QUEEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.SEVEN">SEVEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.SIX">SIX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.TEN">TEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.THREE">THREE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Rank.TWO">TWO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.card.Suite">card_deck.card.Suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Suite.CLUBS">CLUBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Suite.DIAMONDS">DIAMONDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Suite.HEARTS">HEARTS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.card.Suite.SPADES">SPADES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id4">CLUBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id5">DIAMONDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id6">HEARTS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id7">SPADES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="card_deck.html#module-card_deck.exceptions">card_deck.exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.CardDeckAttributeError">card_deck.exceptions.CardDeckAttributeError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.CardDeckException">card_deck.exceptions.CardDeckException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.CardDeckTypeError">card_deck.exceptions.CardDeckTypeError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.CardDeckValueError">card_deck.exceptions.CardDeckValueError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.InvalidCard">card_deck.exceptions.InvalidCard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.InvalidCardAttribute">card_deck.exceptions.InvalidCardAttribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.InvalidCardRank">card_deck.exceptions.InvalidCardRank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.InvalidCardSuite">card_deck.exceptions.InvalidCardSuite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.exceptions.InvalidDeck">card_deck.exceptions.InvalidDeck</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="card_deck.html#module-card_deck">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.Card">card_deck.Card</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Card._suite">_suite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Card._rank">_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Card.rank">rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Card.suite">suite</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.Rank">card_deck.Rank</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.ACE">ACE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.JACK">JACK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.QUEEN">QUEEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.KING">KING</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id8">ACE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.EIGHT">EIGHT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.FIVE">FIVE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.FOUR">FOUR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id9">JACK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id10">KING</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.NINE">NINE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id11">QUEEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.SEVEN">SEVEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.SIX">SIX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.TEN">TEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.THREE">THREE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Rank.TWO">TWO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="card_deck.html#card_deck.Suite">card_deck.Suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Suite.CLUBS">CLUBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Suite.DIAMONDS">DIAMONDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Suite.HEARTS">HEARTS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#card_deck.Suite.SPADES">SPADES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id12">CLUBS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id13">DIAMONDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id14">HEARTS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_deck.html#id15">SPADES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests.test_card">tests.test_card module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_card_initialization">tests.test_card.test_card_initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_card_initialization-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_del_rank">tests.test_card.test_del_rank</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_del_rank-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_del_suite">tests.test_card.test_del_suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_del_suite-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_get_rank">tests.test_card.test_get_rank</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_get_rank-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_get_suite">tests.test_card.test_get_suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_get_suite-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_invalid_card_initialization_rank">tests.test_card.test_invalid_card_initialization_rank</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_invalid_card_initialization_rank-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_invalid_card_initialization_suite">tests.test_card.test_invalid_card_initialization_suite</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_invalid_card_initialization_suite-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_set_rank_invalid">tests.test_card.test_set_rank_invalid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_set_rank_invalid-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_set_rank_valid">tests.test_card.test_set_rank_valid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_set_rank_valid-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_set_suite_invalid">tests.test_card.test_set_suite_invalid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_set_suite_invalid-parameters">Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.html#tests.test_card.test_set_suite_valid">tests.test_card.test_set_suite_valid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.html#tests.test_card.test_set_suite_valid-parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html#module-tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
 
 
 

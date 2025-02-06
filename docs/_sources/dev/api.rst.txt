@@ -1,2 +1,0 @@
-.. automodule:: card_deck
-   :members:

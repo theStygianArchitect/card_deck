@@ -42,4 +42,4 @@ This part of the documentation details information about the Deck of Cards libra
 .. toctree::
    :maxdepth: 2
 
-    dev/api
+    dev/modules
