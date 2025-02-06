@@ -1,0 +1,73 @@
+[project]
+name = "card_deck"
+version = "0.1.0"
+description = "Building the functionality of a deck of playing cards."
+readme = "README.md"
+authors = [
+    { name = "theStygianArchitect", email = "thestygianArchitect@gmail.com" }
+]
+maintainers = [
+    { name = "theStygianArchitect", email = "thestygianArchitect@gmail.com" }
+]
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    { include-group = "security" },
+    { include-group = "linting" },
+    { include-group = "testing" },
+    { include-group = "docs" }
+]
+security = [
+    "bandit>=1.8.2",
+    "pip-audit>=2.7.3",
+]
+linting = [
+    "mypy>=1.15.0",
+    "pycodestyle>=2.12.1",
+    "pydocstyle>=6.3.0",
+    "pylint>=3.3.4",
+    "ruff>=0.9.4",
+]
+testing = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "pytest-xdist>=3.6.1",
+]
+docs = [
+    "myst-parser>=4.0.0",
+    "sphinx>=8.1.3",
+    "sphinx-autodoc-typehints>=3.0.1",
+    "sphinx-immaterial>=0.12.5",
+]
+
+[tool.pytest.ini_options]
+#addopts = "--numprocesses auto -rA --reruns 10 --reruns-delay 60"
+#addopts = "--numprocesses auto -rA"
+addopts = "-rA"
+log_cli = true
+log_cli_level = 30
+
+[tool.mypy]
+strict = true
+strict_optional = true
+follow_imports = "skip"
+show_error_codes = true
+
+[tool.pydocstyle]
+convention = "google"
+
+[tool.pylint]
+max-line-length = 120
+
+[tool.pycodestyle]
+max-line-length = 120
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*/test_*.py']
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
