@@ -4,10 +4,10 @@ version = "0.1.0"
 description = "Building the functionality of a deck of playing cards."
 readme = "README.md"
 authors = [
-    { name = "tsa", email = "thestygianArchitect@gmail.com" }
+    { name = "theStygianArchitect", email = "thestygianArchitect@gmail.com" }
 ]
 maintainers = [
-    { name = "tsa", email = "thestygianArchitect@gmail.com" }
+    { name = "theStygianArchitect", email = "thestygianArchitect@gmail.com" }
 ]
 license = "MIT"
 requires-python = ">=3.13"

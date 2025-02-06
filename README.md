@@ -1,4 +1,4 @@
-# Card Deck
+# Deck of Cards
 
 A Python project built with **Python 3.13.1**, featuring **pytest** for testing and **coverage** for test coverage
 analysis.
