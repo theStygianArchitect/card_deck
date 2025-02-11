@@ -31,6 +31,7 @@ class CardDeckValueError(ValueError):
 class CardDeckTypeError(TypeError):
     """Exception raised for invalid card_deck deck types."""
 
+
 class CardDeckAttributeError(AttributeError):
     """Exception raised for invalid card_deck deck attributes."""
 

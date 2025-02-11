@@ -31,12 +31,10 @@ from card_deck.exceptions import InvalidCardRank
 from card_deck.exceptions import InvalidCardSuite
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_card_initialization(suite: Suite, rank: Rank):
-    """
-    Test the initialization of a Card object with valid suite and rank values.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_card_initialization(suite: Suite, rank: Rank) -> None:
+    """Test the initialization of a Card object with valid suite and rank values.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
@@ -45,6 +43,9 @@ def test_card_initialization(suite: Suite, rank: Rank):
         - The suite of the created card matches the input suite.
         - The rank of the created card matches the input rank.
         - The string representation of the card is in the format '<Rank> of <Suite>'.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     assert card.suite == suite
@@ -54,81 +55,86 @@ def test_card_initialization(suite: Suite, rank: Rank):
 
 # @pytest.mark.parametrize("suite", list(Suite))
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_invalid_card_initialization_suite(rank: Rank):
-    """
-    Test the initialization of a Card object with an invalid suite.
-
+def test_invalid_card_initialization_suite(rank: Rank) -> None:
+    """Test the initialization of a Card object with an invalid suite.
     Args:
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - Raises an InvalidCardSuite exception when the suite is invalid.
+
+    Returns:
+        None
     """
     with pytest.raises(InvalidCardSuite):
         Card("InvalidSuit", rank)
 
 
 @pytest.mark.parametrize("suite", list(Suite))  # type: ignore
-def test_invalid_card_initialization_rank(suite: Suite):
-    """
-    Test the initialization of a Card object with an invalid rank.
-
+def test_invalid_card_initialization_rank(suite: Suite) -> None:
+    """Test the initialization of a Card object with an invalid rank.
     Args:
         suite (Suite): A valid suite from the Suite enum.
 
     Asserts:
         - Raises an InvalidCardRank exception when the rank is invalid.
+
+    Returns:
+        None
     """
     with pytest.raises(InvalidCardRank):
         Card(suite, "InvalidRank")
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_get_suite(suite: Suite, rank: Rank):
-    """
-    Test the get_suite method of the Card class.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_get_suite(suite: Suite, rank: Rank) -> None:
+    """Test the get_suite method of the Card class.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - The suite of the card matches its name representation.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     assert str(card.suite.name) == suite.name
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_get_rank(suite: Suite, rank: Rank):
-    """
-    Test the get_rank method of the Card class.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_get_rank(suite: Suite, rank: Rank) -> None:
+    """Test the get_rank method of the Card class.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - The rank of the card matches its name representation.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     assert str(card.rank.name) == rank.name
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_set_suite_valid(suite: Suite, rank: Rank):
-    """
-    Test setting a valid suite for a Card object using the set_suite method.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_set_suite_valid(suite: Suite, rank: Rank) -> None:
+    """Test setting a valid suite for a Card object using the set_suite method.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - The suite of the card is updated correctly to the new suite.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     temp_suite = Suite.SPADES
@@ -139,18 +145,19 @@ def test_set_suite_valid(suite: Suite, rank: Rank):
     assert card.suite == temp_suite
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_set_rank_valid(suite: Suite, rank: Rank):
-    """
-    Test setting a valid rank for a Card object using the set_rank method.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_set_rank_valid(suite: Suite, rank: Rank) -> None:
+    """Test setting a valid rank for a Card object using the set_rank method.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - The rank of the card is updated correctly to the new rank.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     temp_rank = Rank.KING
@@ -161,72 +168,76 @@ def test_set_rank_valid(suite: Suite, rank: Rank):
     assert card.rank == temp_rank
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_set_suite_invalid(suite: Suite, rank: Rank):
-    """
-    Test setting an invalid suite for a Card object using the set_suite method.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_set_suite_invalid(suite: Suite, rank: Rank) -> None:
+    """Test setting an invalid suite for a Card object using the set_suite method.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - Raises an InvalidCardSuite exception when an invalid suite is set.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     with pytest.raises(InvalidCardSuite):
         card.suite = "InvalidSuite"
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_set_rank_invalid(suite: Suite, rank: Rank):
-    """
-    Test setting an invalid rank for a Card object using the set_rank method.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_set_rank_invalid(suite: Suite, rank: Rank) -> None:
+    """Test setting an invalid rank for a Card object using the set_rank method.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - Raises an InvalidCardRank exception when an invalid rank is set.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     with pytest.raises(InvalidCardRank):
         card.rank = "InvalidRank"
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_del_suite(suite: Suite, rank: Rank):
-    """
-    Test deleting the suite attribute of a Card object.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_del_suite(suite: Suite, rank: Rank) -> None:
+    """Test deleting the suite attribute of a Card object.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - Raises an AttributeError when attempting to delete the suite attribute.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     with pytest.raises(AttributeError):
         del card.suite
 
 
-@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
 @pytest.mark.parametrize("rank", list(Rank))  # type: ignore
-def test_del_rank(suite: Suite, rank: Rank):
-    """
-    Test deleting the rank attribute of a Card object.
-
+@pytest.mark.parametrize("suite", list(Suite))  # type: ignore
+def test_del_rank(suite: Suite, rank: Rank) -> None:
+    """Test deleting the rank attribute of a Card object.
     Args:
         suite (Suite): A valid suite from the Suite enum.
         rank (Rank): A valid rank from the Rank enum.
 
     Asserts:
         - Raises an AttributeError when attempting to delete the rank attribute.
+
+    Returns:
+        None
     """
     card = Card(suite, rank)
     with pytest.raises(AttributeError):
